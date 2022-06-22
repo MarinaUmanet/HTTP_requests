@@ -1,4 +1,10 @@
-
+steps:
+  - name: Variables
+    env:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
 require 'rest-client'
 require 'json'
 require 'watir'
@@ -7,10 +13,10 @@ require 'uri'
 require 'base64'
 
 
-CLIENT_ID = "9d49db8c924444c1963b185bbbd66391"
-CLIENT_SECRET = "19ec0af985d54c778974a45fe93b5741"
-EMAIL = "marinaumanet@gmail.com"
-PASSWORD = "Loki_Elia12"
+CLIENT_ID = "CLIENT_ID"
+CLIENT_SECRET = "CLIENT_SECRET"
+EMAIL = "EMAIL"
+PASSWORD = "PASSWORD"
 REDIRECT_URI = "http://localhost:8888/callback"
 ADD_TRACKS_HERE = ["spotify:track:1vbn9fEyw1IYhqgZJdu9ZB","spotify:track:0e8nrvls4Qqv5Rfa2UhqmO","spotify:track:6kxaaIeowajN7w21PfMLbu"]
 
@@ -31,7 +37,7 @@ def get_code(auth_url)
   pass_field = browser.text_field(id: "login-password")
   pass_field.set(PASSWORD)
   browser.button(:text => "Log In").click
-  #browser.button(:text => "Agree").click
+  browser.button(:text => "Agree").click    //#Used for first acces only, disable when testing
   sleep 3
   uri = URI.parse(browser.url).to_s
   uri.split("code=").last
