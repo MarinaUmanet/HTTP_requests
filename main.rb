@@ -5,6 +5,7 @@ steps:
       CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
       EMAIL: ${{ secrets.EMAIL }}
       PASSWORD: ${{ secrets.PASSWORD }}
+
 require 'rest-client'
 require 'json'
 require 'watir'
