@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ADD_TRACKS_HERE = ['spotify:track:1vbn9fEyw1IYhqgZJdu9ZB', 'spotify:track:0e8nrvls4Qqv5Rfa2UhqmO',
-                   'spotify:track:6kxaaIeowajN7w21PfMLbu'].freeze
+                   'spotify:track:6kxaaIeowajN7w21PfMLbu']
 
 def create_new_playlist(user_id, token)
   playlist_url    = "https://api.spotify.com/v1/users/#{user_id}/playlists"
