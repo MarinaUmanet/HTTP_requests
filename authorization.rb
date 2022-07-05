@@ -1,9 +1,19 @@
 # frozen_string_literal: true
 
-CLIENT_ID = '9d49db8c924444c1963b185bbbd66391'
-CLIENT_SECRET = '19ec0af985d54c778974a45fe93b5741'
-EMAIL = 'marinaumanet@gmail.com'
-PASSWORD = '1234512345'
+
+steps:
+  - name: Variables
+    env:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+
+
+CLIENT_ID = "CLIENT_ID"
+CLIENT_SECRET = "CLIENT_SECRET"
+EMAIL = "EMAIL"
+PASSWORD = "PASSWORD"
 REDIRECT_URI = 'http://localhost:8888/callback'
 
 def build_url
